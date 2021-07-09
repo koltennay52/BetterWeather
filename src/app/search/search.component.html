@@ -1,0 +1,20 @@
+<div class="container w-50">
+    <!-- Jumbotron -->
+    <div class="p-5 text-center bg-light">
+      <h1 class="mb-3">Welcome to BetterWeather!</h1>
+      <h5 class="mb-3">Enter your location below:</h5>
+    </div>
+    <!-- Jumbotron -->
+  
+    <div class="input-group w-75 mx-auto">
+      <input
+        type="text"
+        class="form-control rounded"
+        placeholder="Search"
+        aria-label="Search"
+        aria-describedby="search-addon"
+        [(ngModel)]='zipcode'
+      />
+      <button type="button" class="btn btn-outline-primary"><a [routerLink]="['/forecast', zipcode]">Search</a></button>
+    </div>
+  </div>
