@@ -8,7 +8,7 @@ import { catchError, tap } from "rxjs/operators"
 })
 export class ForecastService {
     private openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?zip=';
-    private openWeatherApiKey = '&appid=08895c9f36a4c1ddfb0e22522727e31a';
+    private openWeatherApiKey = '&appid=08895c9f36a4c1ddfb0e22522727e31a&units=imperial';
 
     constructor(private http: HttpClient) {}
 
