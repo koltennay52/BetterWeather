@@ -14,7 +14,7 @@ export class ForecastComponent implements OnInit {
   forecastImage = '';
   forecastSunrise = new Date(); 
   forecastSunset = new Date();
-  errorMessage: string = '';
+  errorFound = false;
   
 
   constructor(
@@ -35,11 +35,7 @@ export class ForecastComponent implements OnInit {
         this.forecastSunrise = new Date(forecast.sys.sunrise * 1000 - forecast.timezone);
         this.forecastSunset = new Date(forecast.sys.sunset * 1000 - forecast.timezone);  
       },
-        error: err => {
-          if (err.status == 404) {
-            this.errorMessage = 'Whoopsie! That may have been an invalid zipcode.  Return to the search scren and attempt another valid US zipcode.';
-          }
-        }
+        error: err => this.errorFound = true  
     });
   }
 }
