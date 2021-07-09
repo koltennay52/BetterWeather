@@ -6,6 +6,8 @@
     </div>
     <!-- Jumbotron -->
   
+    <p class="text-center error-message">{{errorMessage}}</p>
+
     <div class="input-group w-75 mx-auto">
       <input
         type="text"
@@ -14,7 +16,13 @@
         aria-label="Search"
         aria-describedby="search-addon"
         [(ngModel)]='zipcode'
+        (input)="zipChange()"
       />
-      <button type="button" class="btn btn-outline-primary"><a [routerLink]="['/forecast', zipcode]">Search</a></button>
+      <button *ngIf="validSearch" type="button" class="btn btn-outline-primary">
+        <a [routerLink]="['/forecast', zipcode]">Search</a>
+      </button>
+      <button *ngIf="!validSearch" type="button" class="btn btn-outline-primary">
+        <a (click)="errorSearch()">Search</a>
+      </button>
     </div>
   </div>
