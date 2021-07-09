@@ -18,6 +18,6 @@ export class SearchComponent {
   }
 
   errorSearch(): void {
-    this.errorMessage = 'Enter a valid US zipcode to proceed.';
+    this.errorMessage = 'Enter a 5 digit US zipcode to proceed.';
   }
 }

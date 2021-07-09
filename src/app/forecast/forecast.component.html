@@ -1,8 +1,52 @@
-<div class="container">
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">{{forecast.name}}</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+
+<div class="container py-4">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+          <h1 class="display-4">{{ forecast.name }}</h1> {{forecast.weather[0].main }}, {{forecast.weather[0].description | titlecase }}
+          <p class="lead">{{ forecastDate | date: "short" }} <br>
+          {{ forecast.main.temp | number: '1.0-0' }}&deg;F <br>
+          </p>
+          <img [src]="domSanitizer.bypassSecurityTrustUrl(forecastImage)" />
+          <p>
+            <small>Feels like: {{ forecast.main.feels_like | number: '1.0-0' }}&deg;F</small>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card mx-auto" style="width: 18rem;">
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Humidity</strong>: {{ forecast.main.humidity }}%</li>
+            <li class="list-group-item"><strong>Pressure</strong>: {{ forecast.main.pressure }} hPa</li>
+            <li class="list-group-item"><strong>Wind Speed</strong>: {{ forecast.wind.speed }} mph</li>
+          </ul>
         </div>
       </div>
+    </div>
+    <div class="col">
+      <div class="card mx-auto" style="width: 18rem;">
+        <div class="card-body">
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Sunrise:</strong> {{ forecastSunrise | date: 'shortTime' }}</li>
+            <li class="list-group-item"><strong>Sunset:</strong> {{ forecastSunset | date: 'shortTime' }}</li>
+            <li class="list-group-item"><strong>Visibility:</strong> {{ forecast.visibility}} meters</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="container pt-2">
+  <div class="row">
+    <div class="col text-center">
+      <button type="button" class="btn btn-primary"><a class="text-light" href="#">Back to Search</a></button>
+    </div>
+  </div>
 </div>
