@@ -1,5 +1,10 @@
 
-<div class="container py-4">
+<div *ngIf="errorFound == true" class="container p-5 w-75"> 
+  <p>Uh oh! No data found for that zip code.  Please return to the search page and enter a valid US zipcode.<p>
+</div>
+
+
+<div *ngIf="errorFound == false" class="container py-4">
   <div class="row">
     <div class="col d-flex justify-content-center">
       <div class="jumbotron jumbotron-fluid">
@@ -17,8 +22,7 @@
       </div>
     </div>
   </div>
-  <p *ngIf="errorFound">Whoops. Try again. </p>
-  <div *ngIf="!errorFound" class="row">
+  <div class="row">
     <div class="col">
       <div class="card mx-auto" style="width: 18rem;">
         <div class="card-body">
