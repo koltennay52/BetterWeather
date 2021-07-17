@@ -1,10 +1,10 @@
 <div class="container">
     <!-- Jumbotron -->
-    <div class="p-5 text-center">
-      <h1 class="mb-3">Welcome to BetterWeather!</h1>
-      <p>BetterWeather is a small project written using Angular and Typescript to display my understanding in working with APIs and displaying data. 
-        It is a work in progress as I continue to gain knowledge as a web developer. <br> 
-        I utilized OpenWeather's CurrentWeather api for this project.  You can view their documentation <a href="https://openweathermap.org/api"> here.</a>
+    <div class="p-5">
+      <h1 class="mb-3 text-center">Welcome to BetterWeather!</h1>
+      <p class="w-75 mx-auto">BetterWeather is a small project written using Angular and Typescript to display my understanding in working with APIs and displaying data. 
+        It is a work in progress as I continue to gain knowledge about component design, best practice for asynchronous programming, and data visualization.  <br> <br>
+        I utilized OpenWeather's CurrentWeather api for this project.  You can view their documentation <a class="text-danger" href="https://openweathermap.org/api"> here.</a>
       </p>
     </div>
     <!-- Jumbotron -->
@@ -16,16 +16,16 @@
       <input
         type="text"
         class="form-control rounded"
-        placeholder="Search"
+        placeholder="zipcode"
         aria-label="Search"
         aria-describedby="search-addon"
         [(ngModel)]='zipcode'
         (input)="zipChange()"
       />
-      <button *ngIf="validSearch" type="button" class="btn btn-outline-primary">
+      <button *ngIf="validSearch" type="button" class="btn btn-outline-primary text-primary">
         <a [routerLink]="['/forecast', zipcode]">Search</a>
       </button>
-      <button *ngIf="!validSearch" type="button" class="btn btn-outline-primary">
+      <button *ngIf="!validSearch" type="button" class="btn btn-outline-primary text-primary">
         <a (click)="errorSearch()">Search</a>
       </button>
     </div>

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { SearchComponent } from './search/search.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SearchComponent } from './search/search.component';
       { path: 'search', component: SearchComponent}, 
       { path: '', redirectTo: 'search', pathMatch: 'full'},
       { path: '**', redirectTo: 'search', pathMatch: 'full'}
-    ])
+    ]),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

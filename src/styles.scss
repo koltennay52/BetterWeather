@@ -4,11 +4,11 @@
 
 
 $theme-colors: (
-  "primary": #379683,
-  "light": #a5e9bf,
-  "secondary": #05386b,
+  "primary": #00BD9D,
+  "light": #FFFBFA,
+  "secondary": #8BD7D2,
   "info": #edf5e1,
-  "danger": #fe5d26
+  "danger": #54DEFD
 );
 
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';

@@ -7,7 +7,7 @@
 <div *ngIf="errorFound == false" class="container py-4">
   <div class="row">
     <div class="col d-flex justify-content-center">
-      <div class="jumbotron jumbotron-fluid">
+      <div class="">
         <div class="container text-center">
           <h1 class="display-4">{{ forecast.name }}</h1> {{forecast.weather[0].main }}, {{forecast.weather[0].description | titlecase }}
           <p class="lead">{{ forecastDate | date: "short" }} <br>
