@@ -17,6 +17,8 @@ export class ForecastComponent implements OnInit {
   errorFound = false;
   
 
+
+
   constructor(
     private forecastService: ForecastService,
     private route: ActivatedRoute,
@@ -38,5 +40,7 @@ export class ForecastComponent implements OnInit {
           this.errorFound = true;
         }
     });
+
+    
   }
 }
